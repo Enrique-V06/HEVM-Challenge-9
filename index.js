@@ -64,10 +64,10 @@ function writeToFile(fileName, data) {
     
     function Badge(license){
     const badges = {
-        ISC: '[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
-        MIT: '[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)',
-        Apache : '[![License: apache](https://img.shields.io/badge/License-apache-2.0-blue.svg)](https://opensource.org/licenses/apache-2.0)',
-        mpl : '[![License: mpl](https://img.shields.io/badge/License-mpl-2.0-blue.svg)](https://opensource.org/licenses/mpl-2.0)',
+        ISC: '[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
+        MIT: '[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)',
+        Apache : '[![License](https://img.shields.io/badge/License-apache-2.0-blue.svg)](https://opensource.org/licenses/apache-2.0)',
+        mpl : '[![License](https://img.shields.io/badge/License-mpl-2.0-blue.svg)](https://opensource.org/licenses/mpl-2.0)',
     }
     return badges[license]
     }
@@ -78,13 +78,13 @@ function writeToFile(fileName, data) {
     ${Badge(license)}
     ## Table of Contents 
     
-    -[Description](#Description)
-    - [Installation](#Installation)
-    - [Usage](#Usage)
-    - [Credits](#Credits)
-    - [License](#License)
-    - [Tests](#Tests)
-    - [Contact](#Contact)
+    - [!Description](#Description)
+    - [!Installation](#Installation)
+    - [!Usage](#Usage)
+    - [!Credits](#Credits)
+    - [!License](#License)
+    - [!Tests](#Tests)
+    - [!Contact](#Contact)
     
     ## Description
 
