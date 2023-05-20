@@ -64,10 +64,10 @@ function writeToFile(fileName, data) {
     console.log(license)
     function Badge(license){
     const badges = {
-        ISC: '[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
-        MIT: '[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)',
-        Apache : '[![License](https://img.shields.io/badge/License-apache-2.0-blue.svg)](https://opensource.org/licenses/apache-2.0)',
-        mpl : '[![License](https://img.shields.io/badge/License-mpl-2.0-blue.svg)](https://opensource.org/licenses/mpl-2.0)',
+        ISC: '![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)(https://opensource.org/licenses/ISC)',
+        MIT: '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)',
+        Apache : '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)(https://opensource.org/licenses/Apache-2.0)',
+        mpl : '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)(https://opensource.org/licenses/MPL-2.0)',
     }
     return badges[license]
     }
@@ -76,45 +76,46 @@ function writeToFile(fileName, data) {
     const generateREADME = ({title, email, github, license, description, installation, contributors, guidelines, test, instructions}) => 
     `# ${title}
     ${Badge(license)}
+
     ## Table of Contents 
     
-    - [!Description](#Description)
-    - [!Installation](#Installation)
-    - [!Usage](#Usage)
-    - [!Credits](#Credits)
-    - [!License](#License)
-    - [!Tests](#Tests)
-    - [!Contact](#Contact)
+    - [ Description ](#Description)
+    - [ Installation ](#Installation)
+    - [ Usage ](#Usage)
+    - [ Credits ](#Credits)
+    - [ License ](#License)
+    - [ Tests ](#Tests)
+    - [ Contact ](#Contact)
     
-    ## Description
+    ## <a name="Description"></a>Description
 
     ${description}
 
-    ## Installation
+    ## <a name="Installation"></a>Installation
 
     ${installation}
     
-    ## Usage
+    ## <a name="Usage"></a>Usage
     
     ${instructions}
 
-    ## Guidelines
+    ## <a name="Guidelines"></a>Guidelines
 
     ${guidelines}
     
-    ## Credits
+    ## <a name="Credits"></a>Credits
     
     ${contributors}
     
-    ## License
+    ## <a name="License"></a>License
     
     ${license}
         
-    ## Tests
+    ## <a name="Tests"></a>Tests
     
     ${test}
 
-    ## Contact
+    ## <a name="Contact"></a>Contact
 
     Email: ${email}
     Github: ${github}
@@ -129,7 +130,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((data) => {
-            const title = `${data.title.toLowerCase().split(' ').join('')}_README.md`
+            const title = `README.md`
             // console.log(title)
             writeToFile(title, data)
         })
