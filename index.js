@@ -59,9 +59,9 @@ const questions = [
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-    console.log(data)
+    // console.log(data)
     let license = data.license
-    
+    console.log(license)
     function Badge(license){
     const badges = {
         ISC: '[![License](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)',
@@ -129,7 +129,7 @@ function init() {
     inquirer
         .prompt(questions)
         .then((data) => {
-            const title = `${data.title.toLowerCase().split(' ').join('')}.md`
+            const title = `${data.title.toLowerCase().split(' ').join('')}_README.md`
             // console.log(title)
             writeToFile(title, data)
         })
