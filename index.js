@@ -64,10 +64,10 @@ function writeToFile(fileName, data) {
     console.log(license)
     function Badge(license){
     const badges = {
-        ISC: `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)`,
-        MIT: `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`,
-        Apache : `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`,
-        mpl : `![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]`,
+        ISC: `[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)`,
+        MIT: `[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)`,
+        Apache : `[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)`,
+        mpl : `[![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)`,
     }
     return badges[license]
     }
