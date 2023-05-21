@@ -64,62 +64,63 @@ function writeToFile(fileName, data) {
     console.log(license)
     function Badge(license){
     const badges = {
-        ISC: '![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)(https://opensource.org/licenses/ISC)',
-        MIT: '![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)(https://opensource.org/licenses/MIT)',
-        Apache : '![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)(https://opensource.org/licenses/Apache-2.0)',
-        mpl : '![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)(https://opensource.org/licenses/MPL-2.0)',
+        ISC: `![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)`,
+        MIT: `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`,
+        Apache : `![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)`,
+        mpl : `![License: MPL 2.0](https://img.shields.io/badge/License-MPL%202.0-brightgreen.svg)]`,
     }
     return badges[license]
     }
 
     
     const generateREADME = ({title, email, github, license, description, installation, contributors, guidelines, test, instructions}) => 
-    `# ${title}
-    ${Badge(license)}
+`# ${title}
+${Badge(license)}
 
-    ## Table of Contents 
+## Table of Contents 
     
-    - [ Description ](#Description)
-    - [ Installation ](#Installation)
-    - [ Usage ](#Usage)
-    - [ Credits ](#Credits)
-    - [ License ](#License)
-    - [ Tests ](#Tests)
-    - [ Contact ](#Contact)
-    
-    ## <a name="Description"></a>Description
+- [ Description ](#description)
+- [ Installation ](#installation)
+- [ Usage ](#usage)
+- [ Credits ](#credits)
+- [ License ](#license)
+- [ Tests ](#tests)
+- [ Contact ](#contact)
 
-    ${description}
+## Description
 
-    ## <a name="Installation"></a>Installation
+${description}
 
-    ${installation}
-    
-    ## <a name="Usage"></a>Usage
-    
-    ${instructions}
+## Installation
 
-    ## <a name="Guidelines"></a>Guidelines
+${installation}
 
-    ${guidelines}
+## Usage
     
-    ## <a name="Credits"></a>Credits
+${instructions}
+
+## Guidelines
+
+${guidelines}
     
-    ${contributors}
+## Credits
     
-    ## <a name="License"></a>License
+${contributors}
     
-    ${license}
+## License
+    
+${license}
         
-    ## <a name="Tests"></a>Tests
+## Tests
     
-    ${test}
+${test}
 
-    ## <a name="Contact"></a>Contact
+## Contact
 
-    Email: ${email}
-    Github: ${github}
-    `;
+Email: ${email}
+
+Github: ${github}
+`;
 
     fs.writeFile(fileName, generateREADME(data), (err) => 
     err ? console.log(err) : console.log('README file created!'));
